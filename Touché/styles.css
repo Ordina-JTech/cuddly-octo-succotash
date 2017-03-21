@@ -87,6 +87,11 @@ a {
 
 /*HS*/
 /*Styling table*/
+#hscontainer {
+	height: 90%;
+    overflow: auto;
+}
+
 table {
     border-collapse: collapse;
     width: 100%;
@@ -120,6 +125,8 @@ th {
 ul {
     list-style-type: none;
     margin: 0;
+    margin-left: 10%;
+    margin-right: 10%;
     padding: 0;
     overflow: hidden;
 }
