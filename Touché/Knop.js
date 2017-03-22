@@ -1,5 +1,5 @@
 //start als pagina klaar is
-$(document).ready(function(){
+
 
     // button constructor
     function Knop(plaatjePad,klasse,formaat,waarde){
@@ -8,5 +8,4 @@ $(document).ready(function(){
         this.formaat = formaat;
         this.waarde = waarde;
 
-    }
-});
+    };
