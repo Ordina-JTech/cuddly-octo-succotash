@@ -1,6 +1,4 @@
-//start als pagina klaar is
-    // score constructor
-    function Score(naam,score){
-        this.naam = naam;
-        this.score = score;
-    };
+function Score(){
+    this.naam;
+    this.score = 0;
+};

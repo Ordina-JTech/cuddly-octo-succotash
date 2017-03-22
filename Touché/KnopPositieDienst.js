@@ -27,11 +27,13 @@ function KnopPositieDienst(){
 	}
 
 	this.toonKnop = function(knop){
-		document.getElementById(this.buttonId).className = knop.klasse;
-		document.getElementById(this.buttonId).width = knop.formaat;
-		document.getElementById(this.buttonId).height = knop.formaat;
+		var buttonElement = document.getElementById(this.buttonId);
+
+		buttonElement.className = knop.klasse;
+		// buttonElement.style.width = knop.formaat;
+		// buttonElement.style.height = knop.formaat;
 		// document.getElementById("b1").src = knop.plaatjePad;
-		document.getElementById(this.buttonId).style.top = this.krijgWillekeurigeY();
-		document.getElementById(this.buttonId).style.left = this.krijgWillekeurigeX();
+		buttonElement.style.top = this.krijgWillekeurigeY();
+		buttonElement.style.left = this.krijgWillekeurigeX();
 	}
 }

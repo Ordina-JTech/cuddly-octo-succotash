@@ -5,10 +5,6 @@ function SpelBeheerder(){
     this.knopPositieDienst;
     this.score;
 
-    this.erIsOpEenKnopGeklikt = function() {
-      alert("onclick");
-    }
-
     // start functie, wordt uitgevoerd bij begin spel
     this.start = function(){
         this.knopFabriek = new KnopFabriek();
@@ -20,8 +16,15 @@ function SpelBeheerder(){
 
     this.toonNieuweKnop = function(){
         this.knop = this.knopFabriek.krijgWillekeurigeKnop();
-        this.knopPositieDienst.toonKnop(this.knop);
-        // this.knop.klikLuisteraar = erIsOpEenKnopGeklikt;
 
+        this.knop.klikLuisteraar = this.erIsOpEenKnopGeklikt;
+        this.knopPositieDienst.toonKnop(this.knop);
+    }
+
+    this.erIsOpEenKnopGeklikt = function() {
+      this.score.score += this.knop.waarde;
+      alert("nieuwe score: " + this.score.score);
+
+      this.toonNieuweKnop();
     }
 }

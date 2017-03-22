@@ -2,7 +2,7 @@ function KnopFabriek() {
 	this.krijgWillekeurigeKnop = function(){
 		switch (this.krijgWillekeurigeCase()){
 			case "0":
-			   return new Knop("plaatjes/plaatje0.jpg","driehoek",50,5);
+			   return new Knop("plaatjes/plaatje0.jpg","driehoek",1500,5);
 			case "1":
 				return new Knop("plaatjes/plaatje1.jpg","vierkant",50,10);
 			case "2":
