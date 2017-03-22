@@ -2,6 +2,10 @@
 $(document).ready(function(){
     
     function SpelBeheerder(){
+		
+		var knopFabriek = new KnopFabriek();
+		var knop = knopFabriek.krijgWillekeurigeKnop();
+		
         // start functie, wordt uitgevoerd bij begin spel
         function start(){
             var score = new Score;
@@ -9,6 +13,8 @@ $(document).ready(function(){
             });
         }  
         
+		
+		
         // toont nieuwe knop
         function toonNieuweKnop(){
             var knop = new Knop;
