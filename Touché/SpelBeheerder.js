@@ -23,7 +23,8 @@ function SpelBeheerder(){
 
     this.erIsOpEenKnopGeklikt = function() {
       this.score.score += this.knop.waarde;
-      alert("nieuwe score: " + this.score.score);
+
+      document.getElementById("Score").innerHTML = this.score.score;
 
       this.toonNieuweKnop();
     }

@@ -1,5 +1,5 @@
 function KnopPositieDienst(){
-	this.bovenRand = 5;
+	this.bovenRand = 7.5;
 	this.radius = 3;
 	this.x = 0;
 	this.y = 0

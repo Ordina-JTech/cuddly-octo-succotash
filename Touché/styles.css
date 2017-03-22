@@ -58,6 +58,18 @@ a {
     border: 1px solid white;
 }
 
+.toonScore {
+    position: fixed;
+    top: 2.5%;
+    left: 30%;
+    right: 30%;
+    border: 5px solid white;
+    border-radius: 5px;
+    width: auto;
+    height: 5%;
+		text-align: center;
+}
+
 /*Styling verschillende 'classes' van de knoppen*/
 .driehoek {
     position: fixed;
