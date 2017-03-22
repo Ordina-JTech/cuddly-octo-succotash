@@ -1,5 +1,5 @@
 //start als pagina klaar is
-$(document).ready(function(){
+
 
     // button constructor
     function Knop(plaatje,vorm,formaat,waarde){
@@ -12,5 +12,4 @@ $(document).ready(function(){
         function getWaarde(){
             return waarde;
         }
-    }
-});
+    };

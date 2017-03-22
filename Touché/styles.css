@@ -94,9 +94,14 @@ a {
 
 table {
     border-collapse: collapse;
+    border-style: hidden;
     width: 100%;
     color: #EB8202;
     font-size: 1.25em;
+}
+
+table td, table th {
+    border: 1px solid #EB8202;
 }
 
 th,td {
