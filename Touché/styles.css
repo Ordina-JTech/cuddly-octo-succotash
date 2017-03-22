@@ -51,26 +51,84 @@ a {
 }
 
 /*Styling getoonde knop*/
-.Knop {
+#Knop {
     width: 20px;
     height: 20px;
     background-color: white;
     border: 1px solid white;
-    border-radius: 200px;
 }
 
-#b1 {
+/*Styling verschillende 'classes' van de knoppen*/
+.driehoek {
     position: fixed;
     top: 50%;
     left: 50%;
+    -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 
-#b2 {
+.vierkant {
     position: fixed;
-    top: 25%;
-    left: 25%;
+    top: 50%;
+    left: 50%;
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
 }
 
+.ster {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.octagon {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);   
+}
+
+.rondje {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+}
+
+.rabbet {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+    clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+}
+
+.kruis {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-clip-path: polygon(10% 25%, 35% 25%, 35% 0%, 65% 0%, 65% 25%, 90% 25%, 90% 50%, 65% 50%, 65% 100%, 35% 100%, 35% 50%, 10% 50%);
+    clip-path: polygon(10% 25%, 35% 25%, 35% 0%, 65% 0%, 65% 25%, 90% 25%, 90% 50%, 65% 50%, 65% 100%, 35% 100%, 35% 50%, 10% 50%);
+}
+
+.pentagon {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+/*Verbergen van het element*/
+.hidden {
+    display: none;
+}
+
+/*HS*/
 /*Plaatsing table*/
 #hscontainer {
 	position: fixed;
@@ -80,12 +138,6 @@ a {
     overflow: auto;
 }
 
-/*Verbergen van het element*/
-.hidden {
-    display: none;
-}
-
-/*HS*/
 /*Styling table*/
 #hscontainer {
 	height: 90%;
