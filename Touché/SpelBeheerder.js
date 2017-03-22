@@ -18,8 +18,8 @@ function SpelBeheerder(){
         this.toonNieuweKnop();
     }
 
-    function toonNieuweKnop(){
-        this.knop = knopFabriek.krijgWillekeurigeKnop();
+    this.toonNieuweKnop = function(){
+        this.knop = this.knopFabriek.krijgWillekeurigeKnop();
         this.knopPositieDienst.toonKnop(this.knop);
         // this.knop.klikLuisteraar = erIsOpEenKnopGeklikt;
 
