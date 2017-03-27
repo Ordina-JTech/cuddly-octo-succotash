@@ -36,4 +36,5 @@ function KnopPositieDienst(){
 		buttonElement.style.top = this.krijgWillekeurigeY();
 		buttonElement.style.left = this.krijgWillekeurigeX();
 	}
+
 }
