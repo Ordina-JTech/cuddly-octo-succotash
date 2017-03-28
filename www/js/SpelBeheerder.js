@@ -5,12 +5,14 @@ function SpelBeheerder(){
     this.knopPositieDienst;
     this.score;
     this.gebeurtenisLuisteraar;
+    this.teller;
 
     // start functie, wordt uitgevoerd bij begin spel
     this.start = function(){
         this.knopFabriek = new KnopFabriek();
         this.knopPositieDienst = new KnopPositieDienst();
         this.score = new Score();
+        this.teller = new Teller();
 
         //Creëeren en vullen van gebeurtenisLuisteraar:
         var knopElement = document.getElementById("Knop");
@@ -24,7 +26,10 @@ function SpelBeheerder(){
           this.erIsNaastGeklikt(element);
         }.bind(this));
 
+
         this.toonNieuweKnop();
+        this.score.toonScore();
+
     }
 
     this.toonNieuweKnop = function(){
@@ -32,15 +37,20 @@ function SpelBeheerder(){
         this.knopPositieDienst.toonKnop(this.knop);
     }
 
-    this.erIsOpEenKnopGeklikt = function(element) {
-        this.score.score += this.knop.waarde;
-        document.getElementById("Score").innerHTML = this.score.score;
-        this.toonNieuweKnop();
+    this.erIsOpEenKnopGeklikt = function() {
+      this.score.score += this.knop.waarde;
+      this.score.toonScore();
+      this.toonNieuweKnop();
     }
 
     this.erIsNaastGeklikt = function(element){
       this.score.score -= this.knop.waarde;
-      document.getElementById("Score").innerHTML = this.score.score;
+      this.score.toonScore();
       this.toonNieuweKnop();
+    }
+
+    this.eindeSpel = function(){
+      window.open("../www/highscores.html","_self");
+      alert("De tijd is om! \nJouw score: " + this.score.score + " punten!");
     }
 }

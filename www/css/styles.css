@@ -61,11 +61,22 @@ a {
 .toonScore {
     position: fixed;
     top: 2.5%;
-    left: 30%;
-    right: 30%;
+    left: 55%;
+    right: 10%;
     border: 5px solid white;
     border-radius: 5px;
-    width: auto;
+    width: 35%;
+    height: 5%;
+		text-align: center;
+}
+.toonTeller {
+    position: fixed;
+    top: 2.5%;
+    left: 10%;
+    right: 45%;
+    border: 5px solid white;
+    border-radius: 5px;
+    width: 35%;
     height: 5%;
 		text-align: center;
 }
