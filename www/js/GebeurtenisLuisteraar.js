@@ -8,7 +8,7 @@ function GebeurtenisLuisteraar(){
       var target = event.target || event.srcElement;
 
       for (var[element, luisteraar] of this.luisteraars) {
-        if (target == element) {
+        if (target === element) {
           luisteraar(element);
         }
       }

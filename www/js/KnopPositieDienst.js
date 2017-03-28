@@ -35,8 +35,6 @@ function KnopPositieDienst(){
 		// document.getElementById("b1").src = knop.plaatjePad;
 		knopElement.style.top = this.krijgWillekeurigeY();
 		knopElement.style.left = this.krijgWillekeurigeX();
-
-		return knopElement;
 	}
 
 }
