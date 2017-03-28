@@ -12,6 +12,7 @@ function SpelBeheerder(){
         this.knopPositieDienst = new KnopPositieDienst();
         this.score = new Score();
         this.gebeurtenisLuisteraar = new GebeurtenisLuisteraar();
+        this.gebeurtenisLuisteraar.init();
 
         this.toonNieuweKnop();
     }
@@ -20,16 +21,16 @@ function SpelBeheerder(){
         this.knop = this.knopFabriek.krijgWillekeurigeKnop();
 
         this.knop.klikLuisteraar = this.erIsOpEenKnopGeklikt;
-        this.knopPositieDienst.toonKnop(this.knop);
+        var knopElement = this.knopPositieDienst.toonKnop(this.knop);
+        this.gebeurtenisLuisteraar.voegLuisteraarToe(knopElement, function(element) {
+          this.erIsOpEenKnopGeklikt(element);
+        }.bind(this));
     }
 
-
-    this.erIsOpEenKnopGeklikt = function(target, buttonElement) {
-      if(target === buttonElement){
+    this.erIsOpEenKnopGeklikt = function(element) {
         this.score.score += this.knop.waarde;
         document.getElementById("Score").innerHTML = this.score.score;
         this.toonNieuweKnop();
-      }
     }
 
     this.erIsNaastGeklikt = function(target, buttonElement){

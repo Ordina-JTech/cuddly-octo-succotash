@@ -1,8 +1,21 @@
 function GebeurtenisLuisteraar(){
-  var buttonElement = document.getElementById("Knop");
-  document.addEventListener("click", function(e) {
-    var target = e.target || e.srcElement;
-    spelBeheerder.erIsOpEenKnopGeklikt(target, buttonElement);
-    spelBeheerder.erIsNaastGeklikt(target, buttonElement);
-  }, false);
+
+  this.luisteraars = new Map();
+
+  this.init = function() {
+    document.addEventListener("click", function(event) {
+      event.stopPropagation();
+      var target = event.target || event.srcElement;
+
+      for (var[element, luisteraar] of this.luisteraars) {
+        if (target == element) {
+          luisteraar(element);
+        }
+      }
+    }.bind(this), false);
+  }
+
+  this.voegLuisteraarToe = function(element, functie) {
+    this.luisteraars.set(element, functie);
+  }
 }

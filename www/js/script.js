@@ -1,6 +1,6 @@
 //start als pagina klaar is
-var spelBeheerder = new SpelBeheerder();
 
 $(document).ready(function(){
+    var spelBeheerder = new SpelBeheerder();
     spelBeheerder.start();
 });
