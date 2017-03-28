@@ -50,7 +50,8 @@ function SpelBeheerder(){
     }
 
     this.eindeSpel = function(){
-      alert("De tijd is om! \nJouw score: " + this.score.score + " punten!");
-      window.open("../www/highscores.html","_self");
+//      alert("De tijd is om! \nJouw score: " + this.score.score + " punten!");
+      document.getElementById("Teller").innerHTML = "Tijd is om!"
+        setTimeout(function(){window.open("../www/highscores.html","_self")}, 5000);
     }
 }
