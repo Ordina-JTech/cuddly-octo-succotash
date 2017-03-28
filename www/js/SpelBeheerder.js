@@ -28,9 +28,9 @@ function SpelBeheerder(){
       this.score.toonScore();
       this.toonNieuweKnop();
     }
-    
+
     this.eindeSpel = function(){
       window.open("../www/highscores.html","_self");
-      alert("De tijd is om! \nJou score: " + this.score.score + " punten!");
+      alert("De tijd is om! \nJouw score: " + this.score.score + " punten!");
     }
 }
