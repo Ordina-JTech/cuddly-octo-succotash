@@ -12,7 +12,7 @@ function SpelBeheerder(){
         this.knopFabriek = new KnopFabriek();
         this.knopPositieDienst = new KnopPositieDienst();
         this.score = new Score();
-        this.teller = new Teller();
+        this.teller = new Teller(this.eindeSpel);
 
         //Creëeren en vullen van gebeurtenisLuisteraar:
         var knopElement = document.getElementById("Knop");
@@ -50,7 +50,7 @@ function SpelBeheerder(){
     }
 
     this.eindeSpel = function(){
-      window.open("../www/highscores.html","_self");
       alert("De tijd is om! \nJouw score: " + this.score.score + " punten!");
+      window.open("../www/highscores.html","_self");
     }
 }
