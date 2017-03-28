@@ -5,6 +5,9 @@
 
 /*Styling van de pagina*/
 body {
+    -webkit-touch-callout: none; /* prevent callout to copy when tap to hold */
+    -webkit-text-size-adjust: none; /* prevent webkit from resizing text */
+    -webkit-user-select: none; /* prevent copy/paste */
 	background-color: #EB8202;
 	overflow: hidden;
     color: white;
