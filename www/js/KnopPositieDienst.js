@@ -1,6 +1,6 @@
 function KnopPositieDienst(){
 	this.bovenRand = 7.5;
-	this.radius = 3;
+	this.radius = 7;
 	this.x = 0;
 	this.y = 0
 	this.evenX = 0;
@@ -30,9 +30,8 @@ function KnopPositieDienst(){
 		var knopElement = document.getElementById(this.buttonId);
 
 		knopElement.className = knop.klasse;
-		// buttonElement.style.width = knop.formaat;
-		// buttonElement.style.height = knop.formaat;
-		// document.getElementById("b1").src = knop.plaatjePad;
+		knopElement.style.width = knop.formaat;
+		knopElement.style.height = knop.formaat;
 		knopElement.style.top = this.krijgWillekeurigeY();
 		knopElement.style.left = this.krijgWillekeurigeX();
 	}
