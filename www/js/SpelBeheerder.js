@@ -12,7 +12,7 @@ function SpelBeheerder(){
         this.knopFabriek = new KnopFabriek();
         this.knopPositieDienst = new KnopPositieDienst();
         this.score = new Score();
-        this.teller = new Teller(this.eindeSpel);
+        this.teller = new Teller(this.eindeSpel, this);
 
         //Creëeren en vullen van gebeurtenisLuisteraar:
         var knopElement = document.getElementById("Knop");
@@ -44,14 +44,14 @@ function SpelBeheerder(){
     }
 
     this.erIsNaastGeklikt = function(element){
-      this.score.score -= this.knop.waarde;
+      this.score.score -= this.knop.strafpunten;
       this.score.toonScore();
       this.toonNieuweKnop();
     }
 
-    this.eindeSpel = function(){
-//      alert("De tijd is om! \nJouw score: " + this.score.score + " punten!");
+    this.eindeSpel = function(spel){
+      spel.gebeurtenisLuisteraar.stopLuisteraar();
       document.getElementById("Teller").innerHTML = "Tijd is om!"
-        setTimeout(function(){window.open("../www/highscores.html","_self")}, 5000);
+      setTimeout(function(){window.open("../www/highscores.html","_self")}, 5000);
     }
 }

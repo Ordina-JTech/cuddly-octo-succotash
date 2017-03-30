@@ -18,4 +18,7 @@ function GebeurtenisLuisteraar(){
   this.voegLuisteraarToe = function(element, functie) {
     this.luisteraars.set(element, functie);
   }
+  this.stopLuisteraar = function(){
+    this.luisteraars.clear();
+  }
 }
