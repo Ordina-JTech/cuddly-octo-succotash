@@ -6,6 +6,7 @@ function SpelBeheerder(){
     this.score;
     this.gebeurtenisLuisteraar;
     this.teller;
+    this.speler;
 
     // start functie, wordt uitgevoerd bij begin spel
     this.start = function(){
@@ -52,6 +53,7 @@ function SpelBeheerder(){
     this.eindeSpel = function(spel){
       spel.gebeurtenisLuisteraar.stopLuisteraar();
       document.getElementById("Teller").innerHTML = "Tijd is om!"
+      spel.speler = prompt("De tijd is om!\nJou score is "+spel.score.score + "\nWat is je naam?");
       setTimeout(function(){window.open("../www/highscores.html","_self")}, 5000);
     }
 }
