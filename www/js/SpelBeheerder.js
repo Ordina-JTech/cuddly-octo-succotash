@@ -7,6 +7,7 @@ function SpelBeheerder(){
     this.gebeurtenisLuisteraar;
     this.teller;
     this.speler;
+    this.popUpController;
 
     // start functie, wordt uitgevoerd bij begin spel
     this.start = function(){
@@ -14,6 +15,7 @@ function SpelBeheerder(){
         this.knopPositieDienst = new KnopPositieDienst();
         this.score = new Score();
         this.teller = new Teller(this.eindeSpel, this);
+        this.popUpController = new PopUpController(this);
 
         //Creëeren en vullen van gebeurtenisLuisteraar:
         var knopElement = document.getElementById("Knop");
@@ -52,8 +54,14 @@ function SpelBeheerder(){
 
     this.eindeSpel = function(spel){
       spel.gebeurtenisLuisteraar.stopLuisteraar();
-      document.getElementById("Teller").innerHTML = "Tijd is om!"
-      spel.speler = prompt("De tijd is om!\nJou score is "+spel.score.score + "\nWat is je naam?");
-      setTimeout(function(){window.open("../www/highscores.html","_self")}, 5000);
-    }
+      document.getElementById("Teller").innerHTML = "Tijd is om!";
+      document.addEventListener("deviceready", alsDeviceReady, false);
+      setTimeout(spel.popUpController.vraagNaam(spel),5000);
+
+      function alsDeviceReady(){
+        console.log(navigator.notification);
+      }
+
+   }
+
 }

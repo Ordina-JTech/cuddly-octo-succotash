@@ -3,8 +3,10 @@ function GebeurtenisLuisteraar(){
   this.luisteraars = new Map();
 
   this.init = function() {
-    document.addEventListener("click", function(event) {
+    $(document).on("touchstart", function(){
+    // document.addEventListener("click", function(event) {
       event.stopPropagation();
+
       var target = event.target || event.srcElement;
 
       for (var[element, luisteraar] of this.luisteraars) {
@@ -12,7 +14,7 @@ function GebeurtenisLuisteraar(){
           luisteraar(element);
         }
       }
-    }.bind(this), false);
+    }.bind(this));
   }
 
   this.voegLuisteraarToe = function(element, functie) {

@@ -1,7 +1,7 @@
 function Teller(tellerAfgelopenFunctie, spel){
   document.getElementById("Teller").innerHTML = "0:00"
   this.aftellen = function() {
-    var seconden = 30;
+    var seconden = 50;
     function tik() {
         var afteller = document.getElementById("Teller");
         seconden--;
