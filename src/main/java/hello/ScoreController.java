@@ -22,10 +22,10 @@ public class ScoreController {
     private Score score;
     ScoreDao scoreDao = new ScoreDao();
 
-	@RequestMapping("/scores")
-	public Score greeting(String name) {
-		return scoreDao.score;
-	}
+//	@RequestMapping("/scores")
+//	public Score greeting(String name) {
+//		return scoreDao.score;
+//	}
     
     @RequestMapping(value = "/get", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
@@ -35,11 +35,10 @@ public class ScoreController {
     @POST
     @RequestMapping("/post")
     @Consumes(MediaType.APPLICATION_JSON)
+    @ResponseBody
     public void setScores(String name, int scores) {
-        this.score = new Score();
-        score.setName(name);
-        score.setScore(scores);
-        scoreDao.saveScore(this.score);
+        
+        scoreDao.saveScore(name, scores);
         
     }
 }

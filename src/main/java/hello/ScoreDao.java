@@ -16,7 +16,7 @@ public class ScoreDao {
     List<Score> scoreList;
     
     public List<Score> getAllScores() {       
-        File file = new File("Scores.xml");
+        File file = new File("Scores.txt");
         try{
             
             if(!file.exists()) {
@@ -38,7 +38,7 @@ public class ScoreDao {
         return scoreList;
     }
     private void saveScoreList(List<Score> scoreList) {
-        File file = new File("Scores.xml");
+        File file = new File("Scores.txt");
         try {
             FileOutputStream fos = new FileOutputStream(file);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -52,12 +52,12 @@ public class ScoreDao {
          e.printStackTrace(); 
       } 
     }
-    public void saveScore(Score score) {
-        this.score = score;
-        //getAllScores();
-//        scoreList.add(score);
-//        
-//        saveScoreList(scoreList);
+    public void saveScore(String name, int scores) {
+        score = new Score(name, scores);
+        scoreList = getAllScores();
+        scoreList.add(score);
+        
+        saveScoreList(scoreList);
         
     }
     
