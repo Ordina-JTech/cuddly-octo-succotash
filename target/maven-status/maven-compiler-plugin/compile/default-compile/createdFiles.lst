@@ -1,3 +1,4 @@
+hello\Score.class
+hello\ScoreController.class
 hello\Application.class
-hello\Greeting.class
-hello\GreetingController.class
+hello\ScoreDao.class
